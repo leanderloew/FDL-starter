@@ -6,9 +6,9 @@ module.exports = async ({ options, resolveConfigurationProperty }) => {
 
   if (options.stage === "dev")
   {
-    var file_name = '.envs/dev.env'
+    var file_name = '../.envs/dev.env'
   }else{
-    var file_name = '.envs/prod.env'
+    var file_name = '../.envs/prod.env'
   }
 
   const envVars = dotenv.config({ path: file_name }).parsed;
@@ -16,7 +16,7 @@ module.exports = async ({ options, resolveConfigurationProperty }) => {
     {},
     envVars,
   );
-  const envVars2 = dotenv.config({ path: '.envs/gen.env' }).parsed;
+  const envVars2 = dotenv.config({ path: '../.envs/gen.env' }).parsed;
   var env_2=  Object.assign(
     {},
     envVars2,

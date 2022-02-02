@@ -8,4 +8,4 @@ docker build -t prod:latest -f compose/lambda_base/Dockerfile .
 docker tag prod:latest {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/prod_{{cookiecutter.project_slug}}_lambda_base:latest
 docker push {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/prod_{{cookiecutter.project_slug}}_lambda_base:latest
 
-cd serverless_config && serverless deploy --stage prod
+cd serverless_config && npx serverless deploy --stage prod

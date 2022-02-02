@@ -1,9 +1,9 @@
 org: {{cookiecutter.serverless_org}}
 app: {{cookiecutter.serverless_app}}
-service: {{cookiecutter.project_slug}}
+service: {{cookiecutter.project_slug|slugify}}
 variablesResolutionMode: 20210326
 
-frameworkVersion: "2"
+frameworkVersion: "3.1.1"
 useDotenv: true
 provider:
   name: aws
