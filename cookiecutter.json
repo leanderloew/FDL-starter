@@ -1,0 +1,16 @@
+{
+  "project_name":  "test",
+  "serverless_org": "",
+  "serverless_app": "",
+  "aws_id": "",
+  "sentry_dev": "",
+  "sentry_prod": "",
+  "project_slug": "",
+  "aws_local_key_id": "",
+  "aws_local_secret_key": "",
+  "postgres_password_dev": "",
+  "postgres_host_prod": "",
+  "postgres_host_dev": "",
+  "postgres_password_prod": "",
+  "aws_region": ""
+}

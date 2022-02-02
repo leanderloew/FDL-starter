@@ -1,0 +1,18 @@
+org: {{cookiecutter.serverless_org}}
+app: {{cookiecutter.serverless_app}}
+service: lambda-apis
+variablesResolutionMode: 20210326
+
+frameworkVersion: "2"
+useDotenv: true
+provider:
+  name: aws
+  stage: ${opt:stage}
+  region: {{cookiecutter.aws_region}}
+  lambdaHashingVersion: 20201221
+  apiName: ${self:service}-${opt:stage}
+  apiGateway:
+    description: REST API ${self:service}
+    metrics: true
+
+functions: ${file(functions.yml):functions}

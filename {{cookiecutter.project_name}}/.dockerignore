@@ -1,0 +1,13 @@
+data/
+*/notebooks
+**/*.ipynb
+**/*.pdf
+**/*.html
+**/*.xlsx
+**/*.csv
+wandb
+**/versions
+**/*.pytest_cache
+**/migrations
+/.envs/
+

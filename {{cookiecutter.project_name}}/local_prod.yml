@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  dev_server:
+    build:
+      context: .
+      dockerfile: compose/local_server/Dockerfile
+    env_file:
+      - ./.envs/prod.env
+      - ./.envs/gen.env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+      - ./data:/data
+  jupyter_notebook:
+    build:
+      context: .
+      dockerfile: compose/jupyter_notebook/Dockerfile
+    env_file:
+      - ./.envs/prod.env
+      - ./.envs/gen.env
+    volumes:
+      - ./app:/app
+      - ./data:/data
+    ports:
+      - "8888:8888"
+  pycharm:
+    build:
+      context: .
+      dockerfile: compose/pycharm/Dockerfile
+    env_file:
+      - ./.envs/prod.env
+      - ./.envs/gen.env
+    volumes:
+      - ./app:/app
+      - ./data:/data

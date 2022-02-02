@@ -1,0 +1,31 @@
+functions:
+  base:
+    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_lambda_base:latest
+    events:
+      - http:
+          path: health_base/
+          method: get
+          cors: true
+      - http:
+          path: unhealth_base/
+          method: get
+          cors: true
+    memorySize: 2048
+    timeout: 15
+    environment: ${file(serverless_config/load_envs.js)}
+  extended:
+    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_lambda_extended:latest
+    events:
+      - http:
+          path: health_extended/
+          method: get
+          cors: true
+      - http:
+          path: unhealth_extended/
+          method: get
+          cors: true
+    memorySize: 10240
+    timeout: 900
+    environment: ${file(serverless_config/load_envs.js)}
+
+
