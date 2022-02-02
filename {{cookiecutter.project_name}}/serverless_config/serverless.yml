@@ -1,6 +1,6 @@
 org: {{cookiecutter.serverless_org}}
 app: {{cookiecutter.serverless_app}}
-service: lambda-apis
+service: {{cookiecutter.project_slug}}
 variablesResolutionMode: 20210326
 
 frameworkVersion: "2"

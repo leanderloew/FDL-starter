@@ -10,4 +10,4 @@ wandb
 **/*.pytest_cache
 **/migrations
 /.envs/
-
+/serverless_config/

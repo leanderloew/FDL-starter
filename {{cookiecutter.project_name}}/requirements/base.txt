@@ -1,13 +1,12 @@
 SQLAlchemy
 sqlalchemy-utils
-pandas
 boto3
 tqdm
 uvicorn
 fastapi
 alembic
+mangum
 sentry_sdk
-scikit-learn
 pytest
 openpyxl
 xlsxwriter

@@ -1,6 +1,6 @@
 functions:
   base:
-    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_lambda_base:latest
+    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_{{cookiecutter.project_slug}}_lambda_base:latest
     events:
       - http:
           path: health_base/
@@ -12,9 +12,9 @@ functions:
           cors: true
     memorySize: 2048
     timeout: 15
-    environment: ${file(serverless_config/load_envs.js)}
+    environment: ${file(load_envs.js)}
   extended:
-    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_lambda_extended:latest
+    image: {{cookiecutter.aws_id}}.dkr.ecr.eu-central-1.amazonaws.com/${opt:stage}_{{cookiecutter.project_slug}}_lambda_extended:latest
     events:
       - http:
           path: health_extended/
@@ -26,6 +26,6 @@ functions:
           cors: true
     memorySize: 10240
     timeout: 900
-    environment: ${file(serverless_config/load_envs.js)}
+    environment: ${file(load_envs.js)}
 
 
