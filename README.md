@@ -1,5 +1,5 @@
 # FDL-starter
-Using this template you can have a scalable, automated and cheap api server running in 10 minutes! Based on Fastapi, Docker and Lambdas (FDL).
+Using this template you can have a scalable, automated and cheap api server running in 10 minutes! Based on FastApi, Docker and Lambdas (FDL).
 
 ## Overview / Features
 This is my very opinionated starter template for fastapi based projects. It includes a lot of my
