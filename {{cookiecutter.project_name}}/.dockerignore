@@ -11,3 +11,4 @@ wandb
 **/migrations
 /.envs/
 /serverless_config/
+/terraform/
