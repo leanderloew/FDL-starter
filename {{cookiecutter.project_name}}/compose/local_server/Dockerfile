@@ -11,7 +11,7 @@ RUN pip --no-cache-dir install -r local.txt
 
 #we should do this last and install reqs before
 COPY ./app /app
-COPY ./start-reload.sh /start-reload.sh
+COPY ./compose/local_server/start-reload.sh /start-reload.sh
 RUN chmod +x /start-reload.sh
 EXPOSE 8080
 ENV PYTHONPATH=/app
