@@ -10,3 +10,4 @@ sentry_sdk
 pytest
 openpyxl
 xlsxwriter
+pandas

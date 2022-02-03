@@ -12,9 +12,11 @@ with open(env_path+"gen.env", "w") as file:
 with open(env_path+"dev.env", "w") as file:
     file.write("SENTRY_DNS = {{cookiecutter.sentry_dev}}\n"
                "POSTGRES_PASSWORD = {{cookiecutter.postgres_password_dev}}\n"
-               "POSTGRES_HOST = {{cookiecutter.postgres_host_dev}}}\n")
+               "POSTGRES_HOST = {{cookiecutter.postgres_host_dev}}}\n"
+               "IS_PRODUCTION = False")
 
 with open(env_path+"prod.env", "w") as file:
     file.write("SENTRY_DNS = {{cookiecutter.sentry_prod}}\n"
                "POSTGRES_PASSWORD = {{cookiecutter.postgres_password_prod}}\n"
-               "POSTGRES_HOST = {{cookiecutter.postgres_host_prod}}}\n")
+               "POSTGRES_HOST = {{cookiecutter.postgres_host_prod}}}\n"
+               "IS_PRODUCTION = True")
