@@ -7,19 +7,10 @@ learned best practices, it is the template I personally use. it includes:
 1. Fastapi as an api framework 
 2. Local Server, including an API Server and a Jupyter server
 3. A dev and a production environment, seperated by .envs files 
-4. Deployment using Serverless and AWS Lambda
-5. automated deployment using two .sh files and AWS ECR 
-6. Local server, jupyter and deployment server all using separate Docker containers
-7. migration framework using Alembic 
-8. a set of Sql Alchemy utils and boilerplate set up code
-9. I used RDS as a postgres database but any postgres hoster would work
+4. Infra using Serverless and AWS Lambda
+5. Deployment using docker .sh files and AWS ECR 
+6. Local API server and Local Jupyter server using Docker
 
-The goal is, with one click of a button to have a deployed, opinionated API server with database running. 
-it covers important but often overlooked cases out of the box: 
-1. different docker images as well as requirement files for different lambdas and environments
-2. multiple .env files for local and remote as well as general
-3. easy dev and prod switch, so you can easily apply changes to the prod environment from your PC
-4. full integration with Pycharm (sadly you need the pro version)
 ## Setup 
 ### Pre-Requisites
 1. this only works for linux (because of the .sh files we use)
@@ -63,6 +54,15 @@ it covers important but often overlooked cases out of the box:
 ```
    {"status":200}
 ```
+11. to run the local api server and jupyter server simply run 
+```
+docker-compost -f local_dev.yml up 
+```
+12. you can run a local production server instead with 
+```
+docker-compost -f local_prod.yml up 
+```
+
 ### Deployment
 when you have a new change you want to deploy to development run 
 ```
@@ -85,11 +85,11 @@ running this code has the potential to:
    1. only if you run the dev_db and prod_db terraform scripts
 2. generate a lot of costs, if you receive a lot of requests somehow
 you are yourself liable to make sure your project is secure and the costs stay in your budget. This setup is purely educational.
-### Future Work
+
+### TODO
 ## Additional Guides
-3. writing complex api routes
-4. Data Base Setup 
+1. Data Base Setup 
    1. public AWS
    2. Private AWS with VPN
-6. A demo app integrated with Retool
-7. How I have set up Pycharm to use docker-compose
+2. A demo app integrated with Retool
+3. Pycharm + Docker compose setup for debugging
