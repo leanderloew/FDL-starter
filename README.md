@@ -1,4 +1,5 @@
 # FPL-starter
+Using this template you can have a scalable, automated and cheap api server running in 10 minutes! 
 
 ## Overview / Features
 This is my very opinionated starter template for fastapi based projects. It includes a lot of my
@@ -10,8 +11,6 @@ learned best practices, it is the template I personally use. it includes:
    1. so you can easily switch locally by selecting a different docker compose-file
 4. Infra using Serverless and AWS Lambda
 5. Deployment using docker .sh files and AWS ECR 
-
-Using this template you can have a scalable, automated and cheap api server running in 10 minutes! 
 
 ## Setup 
 ### Pre-Requisites
