@@ -20,7 +20,6 @@ it covers important but often overlooked cases out of the box:
 2. multiple .env files for local and remote as well as general
 3. easy dev and prod switch, so you can easily apply changes to the prod environment from your PC
 4. full integration with Pycharm (sadly you need the pro version)
-
 ## Setup 
 ### Pre-Requisites
 1. this only works for linux (because of the .sh files we use)
@@ -31,7 +30,6 @@ it covers important but often overlooked cases out of the box:
    2. a serverless account
    3. (optional) a postgres database accessible by the Lambda functions (preferably in the same VPN)
    4. (optional but recommended) a sentry account
-
 ### Initial Set up
 1. run the cookiecutter for example by:
 ```
@@ -76,13 +74,17 @@ similarly when you want to deploy to production run
 ```
 ### Costs
 1. if you set it up without database the costs should be basically 0, also a lot of requests (1 million) and 400.000 gbseconds will be covered by aws free tier. 
-2. however, if you set up the hosted database it will always cost you some amount. 
-
+2. however, if you set up the hosted database it will always cost you some amount.
 ### Additional recommended setup
 1. you can integrate the deployment script into a remote deployment for example with github actions
    1. the main pain will then be to handle the environment variables
 2. it is recommended not to push before setting up and running some tests
-
+### Disclaimer
+running this code has the potential to: 
+1. destroy existing databases
+   1. only if you run the dev_db and prod_db terraform scripts
+2. generate a lot of costs, if you receive a lot of requests somehow
+you are yourself liable to make sure your project is secure and the costs stay in your budget. This setup is purely educational.
 ### Future Work
 ## Additional Guides
 3. writing complex api routes
