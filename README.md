@@ -47,8 +47,8 @@ it covers important but often overlooked cases out of the box:
     terraform apply
     cd ../..
 ```
-7. (Optional!) you can optionally run similar code to create the Porduction and development Database, however please make sure
-   the code doesn't destroy existing databases, also if in doubt create the databases using aws online interface
+7. (Optional!) you can optionally run similar code to create the production and development databases, however please make sure
+   the code doesn't destroy existing databases, also if in doubt create the databases using an online interface instead
 8. next you have to set up serverless framework run: 
 ```
    cd serverless_config
