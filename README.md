@@ -17,7 +17,8 @@ learned best practices, it is the template I personally use. it includes:
 1. this only works for linux (because of the .sh files we use)
    1. it should be straight forward to extend to MAC / Windows, pull requests are welcome
 2. python + cookiecutter has to be installed
-3. additionally you need: 
+3. npm has to be installed locally to set up serverless framework
+4. additionally you need: 
    1. an aws account
    2. a serverless account
    3. (optional) a postgres database accessible by the Lambda functions (preferably in the same VPN)
