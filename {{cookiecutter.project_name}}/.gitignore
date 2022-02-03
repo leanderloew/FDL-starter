@@ -1,4 +1,4 @@
 /data/
 /.envs/
 desktop.ini
-
+/serverless_config/node_modules/
