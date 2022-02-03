@@ -23,15 +23,16 @@ learned best practices, it is the template I personally use. it includes:
    3. (optional) a postgres database accessible by the Lambda functions (preferably in the same VPN)
    4. (optional but recommended) a sentry account
 ### Initial Set up
-1. run the cookiecutter for example by:
+1. go to serverless and create an organization /  app 
+   1. it has to be the same name as the serverless_org and the serverless_app parameters
+2. run the cookiecutter for example by:
 ```
     cookiecutter git@github.com:leanderloew/FPL-starter.git
 ```
 3. follow the command line to set up your input
 4. wait for the project to be generated
-5. go to serverless and create an organization /  app 
-   1. it has to be the same name as the serverless_org and the serverless_app parameters
-6. now you have to set up the Elastic Container Registries, you can do that by running 
+
+5. now you have to set up the Elastic Container Registries, you can do that by running 
 ```
     cd terraform/ecr
     terraform init
@@ -39,15 +40,15 @@ learned best practices, it is the template I personally use. it includes:
     terraform apply
     cd ../..
 ```
-7. (Optional!) you can optionally run similar code to create the production and development databases, however please make sure
+6. (Optional!) you can optionally run similar code to create the production and development databases, however please make sure
    the code doesn't destroy existing databases, also if in doubt create the databases using an online interface instead
-8. next you have to set up serverless framework run: 
+7. next you have to set up serverless framework run: 
 ```
    cd serverless_config
    npm i serverless
    cd ../
 ```
-9. finally you can run your first development deploy
+8. finally you can run your first development deploy
 ```
    bash deploy_dev.sh
 ```
@@ -64,7 +65,7 @@ docker-compost -f local_dev.yml up
 docker-compost -f local_prod.yml up 
 ```
 
-### Deployment
+### Re-Deployment
 when you have a new change you want to deploy to development run 
 ```
    bash deploy_dev.sh
