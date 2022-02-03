@@ -91,7 +91,7 @@ you are yourself liable to make sure your project is secure and the costs stay i
 ### TODO
 ## Additional Guides
 1. Data Base Setup 
-   1. public AWS
+   1. Public AWS
    2. Private AWS with VPN
 2. A demo app integrated with Retool
 3. Pycharm + Docker compose setup for debugging
