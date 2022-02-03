@@ -5,11 +5,13 @@ This is my very opinionated starter template for fastapi based projects. It incl
 learned best practices, it is the template I personally use. it includes: 
 
 1. Fastapi as an api framework 
-2. Local Server, including an API Server and a Jupyter server
+2. Local API Server and a Jupyter server, using docker-compose
 3. A dev and a production environment, seperated by .envs files 
+   1. so you can easily switch locally by selecting a different docker compose-file
 4. Infra using Serverless and AWS Lambda
 5. Deployment using docker .sh files and AWS ECR 
-6. Local API server and Local Jupyter server using Docker
+
+Using this template you can have a scalable, automated and cheap api server running in 10 minutes! 
 
 ## Setup 
 ### Pre-Requisites
