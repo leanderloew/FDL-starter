@@ -9,6 +9,8 @@ WORKDIR /app
 ENV PYTHONPATH=/app
 
 COPY ./requirements/base.txt .
+RUN pip --no-cache-dir install -r base.txt
+
 COPY ./requirements/local.txt .
 RUN pip --no-cache-dir install -r local.txt
 
