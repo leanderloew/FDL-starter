@@ -5,3 +5,4 @@ desktop.ini
 **/*.pytest_cache
 **/*.pyc
 **/__pycache__/
+/.ssh/

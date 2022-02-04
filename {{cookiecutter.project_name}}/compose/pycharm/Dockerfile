@@ -23,5 +23,15 @@ RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 
 COPY ./app /app
 
+RUN mkdir /root/.ssh/
+ADD .ssh/id_rsa /root/.ssh/id_rsa
+RUN touch /root/.ssh/known_hosts
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+COPY ./requirements/libraries.txt .
+RUN pip --no-cache-dir install -r private_libraries.txt
+
+RUN rm /root/.ssh/id_rsa
+
 USER $UNAME
 CMD /bin/bash
