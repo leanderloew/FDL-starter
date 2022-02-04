@@ -8,6 +8,7 @@ useDotenv: true
 provider:
   name: aws
   stage: ${opt:stage}
+  endpointType: regional
   region: {{cookiecutter.aws_region}}
   lambdaHashingVersion: 20201221
   apiName: ${self:service}-${opt:stage}
