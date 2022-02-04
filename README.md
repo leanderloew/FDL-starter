@@ -12,5 +12,7 @@ git+ssh://git@github.com/YOUR_REPO_URL_FOR_SSH#subdirectory=SUBDIRECTOY_WHERE_TH
 
 ## Tips
 you might get a permission error in your id_rsa file you can run 
+```
 chmod 400 ~/.ssh/id_rsa
+```
 to fix it. 
