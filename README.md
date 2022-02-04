@@ -1,6 +1,6 @@
 # Private python repos
-
-Soon in your code you will want to add a private python repo to do that we: 
+this is useful if you have private python libraries you want to import to your project. 
+## what it does 
 1. generate an ssh key in our local machine and add that to the github repo
 2. then we copy this ssh key in put it in the .ssh file (which is not part of the version controle)
 3. the docker containers will not: 
