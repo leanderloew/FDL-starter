@@ -28,7 +28,7 @@ ADD .ssh/id_rsa /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
-COPY ./requirements/libraries.txt .
+COPY ./requirements/private_libraries.txt .
 RUN pip --no-cache-dir install -r private_libraries.txt
 
 RUN rm /root/.ssh/id_rsa

@@ -42,6 +42,9 @@ RUN pip --no-cache-dir install -r base.txt
 COPY ./requirements/local.txt .
 RUN pip --no-cache-dir install -r local.txt
 
+RUN  apt-get -yq update && \
+     apt-get -yqq install ssh
+
 #we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
 COPY ./app /app
 RUN mkdir /root/.ssh/
@@ -49,7 +52,7 @@ ADD .ssh/id_rsa /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
-COPY ./requirements/libraries.txt .
+COPY ./requirements/private_libraries.txt .
 RUN pip --no-cache-dir install -r private_libraries.txt
 
 RUN rm /root/.ssh/id_rsa
