@@ -9,7 +9,7 @@ terraform {
     organization = "{{cookiecutter.terraform_organization}}"
 
     workspaces {
-      name = "{{cookiecutter.project_slug}}_dev_db"
+      name = "{{cookiecutter.project_name}}_dev_db"
     }
   }
 }
@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 data "aws_db_snapshot" "latest_prod_snapshot" {
-  db_instance_identifier = "{{cookiecutter.project_slug}}_prod_db"
+  db_instance_identifier = "{{cookiecutter.project_name}}_prod_db"
   most_recent            = true
 }
 
@@ -40,7 +40,7 @@ resource "aws_db_instance" "dev" {
   max_allocated_storage = 200
   engine               = "postgres"
   instance_class       = "db.t2.micro"
-  identifier = "{{cookiecutter.project_slug}}_dev_db"
+  identifier = "{{cookiecutter.project_name}}_dev_db"
   name                 = "postgres"
   username             = "postgres"
   password             = var.DB_PW

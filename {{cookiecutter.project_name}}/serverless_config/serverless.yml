@@ -1,6 +1,6 @@
 org: {{cookiecutter.serverless_org}}
-app: {{cookiecutter.serverless_app}}
-service: {{cookiecutter.project_slug|slugify}}
+app: {{cookiecutter.project_name}}
+service: {{cookiecutter.project_name|slugify}}
 variablesResolutionMode: 20210326
 
 frameworkVersion: "3.1.1"

@@ -1,8 +1,6 @@
 {
   "project_name":  null,
-  "project_slug": null,
   "serverless_org": null,
-  "serverless_app": null,
   "aws_id": null,
   "aws_region": null,
 
