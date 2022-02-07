@@ -25,7 +25,7 @@ learned best practices, it is the template I personally use. it includes:
    4. (optional but recommended) a sentry account
 ### Initial Set up
 1. go to serverless and create an organization /  app 
-   1. it has to be the same name as the serverless_org and the serverless_app parameters
+   1. it has to be the same name as the project_name and the serverless_app parameters
 2. run the cookiecutter for example by:
 ```
     cookiecutter git@github.com:leanderloew/FPL-starter.git

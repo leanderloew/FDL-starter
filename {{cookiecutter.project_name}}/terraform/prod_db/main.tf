@@ -8,7 +8,7 @@ terraform {
   backend "remote" {
     organization = "{{cookiecutter.terraform_organization}}"
     workspaces {
-      name = "{{cookiecutter.project_slug}}_prod_db"
+      name = "{{cookiecutter.project_name}}_prod_db"
     }
   }
 }
@@ -33,7 +33,7 @@ resource "aws_db_instance" "prod" {
   max_allocated_storage = 100
   engine               = "postgres"
   instance_class       = "db.t2.micro"
-  identifier = "{{cookiecutter.project_slug}}_prod_db"
+  identifier = "{{cookiecutter.project_name}}_prod_db"
   name                 = "postgres"
   username             = "postgres"
   password             = var.DB_PW
@@ -42,8 +42,8 @@ resource "aws_db_instance" "prod" {
   publicly_accessible = true
   vpc_security_group_ids = [var.SECURITY_GRP]
   skip_final_snapshot = false
-  snapshot_identifier = "{{cookiecutter.project_slug}}_prod_db_snapshot"
-  final_snapshot_identifier = "{{cookiecutter.project_slug}}_prod_db_final_snapshot"
+  snapshot_identifier = "{{cookiecutter.project_name}}_prod_db_snapshot"
+  final_snapshot_identifier = "{{cookiecutter.project_name}}_prod_db_final_snapshot"
 
   lifecycle {
     ignore_changes = [snapshot_identifier]
