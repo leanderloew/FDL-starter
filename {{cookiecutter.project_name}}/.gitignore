@@ -1,7 +1,21 @@
+# local folders
 /data/
 /.envs/
-desktop.ini
+/.ssh/
+/terraform/
 /serverless_config/node_modules
+
+#completely irrellevant files
+desktop.ini
 **/*.pytest_cache
 **/*.pyc
 **/__pycache__/
+*/.ipynb_checkpoints
+
+#opinionated (might have to be removed)
+**/*.ipynb
+**/*.pdf
+**/*.html
+**/*.xlsx
+**/*.csv
+*/notebooks
