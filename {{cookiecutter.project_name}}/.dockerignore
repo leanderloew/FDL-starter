@@ -1,6 +1,5 @@
 /data/
 /.envs/
-/.ssh/
 /terraform/
 /serverless_config/node_modules
 
