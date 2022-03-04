@@ -15,5 +15,6 @@ provider:
   apiGateway:
     description: REST API ${self:service}
     metrics: true
+  logRetentionInDays: 3
 
 functions: ${file(functions.yml):functions}
