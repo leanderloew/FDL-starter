@@ -13,15 +13,11 @@ RUN yum -y install git
 COPY ./requirements/base.txt .
 RUN pip --no-cache-dir install -r base.txt
 
-ADD app .
+COPY ./private_packages /private_packages
+WORKDIR /private_packages
+RUN bash install_packages.sh
+WORKDIR /app
 
-#this should jsut rerun every time, put this before if you dont want to reinstall the apps
-RUN mkdir /root/.ssh/
-ADD .ssh/id_rsa /root/.ssh/id_rsa
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-COPY ./requirements/private_libraries.txt .
-RUN pip --no-cache-dir install -r private_libraries.txt
-RUN rm /root/.ssh/id_rsa
+ADD app .
 
 CMD [ "main.handler" ]

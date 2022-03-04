@@ -45,17 +45,13 @@ RUN pip --no-cache-dir install -r local.txt
 RUN  apt-get -yq update && \
      apt-get -yqq install ssh
 
-#we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
+ #we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
 COPY ./app /app
-RUN mkdir /root/.ssh/
-ADD .ssh/id_rsa /root/.ssh/id_rsa
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
-COPY ./requirements/private_libraries.txt .
-RUN pip --no-cache-dir install -r private_libraries.txt
-
-RUN rm /root/.ssh/id_rsa
+COPY ./private_packages /private_packages
+WORKDIR /private_packages
+RUN bash install_packages.sh
+WORKDIR /app
 
 # set display port to avoid crash
 ENV DISPLAY=:99

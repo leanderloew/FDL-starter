@@ -21,17 +21,12 @@ ARG GID=1000
 RUN groupadd -g $GID -o $UNAME
 RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 
+COPY ./private_packages /private_packages
+WORKDIR /private_packages
+RUN bash install_packages.sh
+WORKDIR /app
+
 COPY ./app /app
-
-RUN mkdir /root/.ssh/
-ADD .ssh/id_rsa /root/.ssh/id_rsa
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-
-COPY ./requirements/private_libraries.txt .
-RUN pip --no-cache-dir install -r private_libraries.txt
-
-RUN rm /root/.ssh/id_rsa
 
 USER $UNAME
 CMD /bin/bash
