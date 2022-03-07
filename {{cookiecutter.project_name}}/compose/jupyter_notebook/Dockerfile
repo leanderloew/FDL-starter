@@ -45,13 +45,14 @@ RUN pip --no-cache-dir install -r local.txt
 RUN  apt-get -yq update && \
      apt-get -yqq install ssh
 
- #we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
-COPY ./app /app
 
 COPY ./private_packages /private_packages
 WORKDIR /private_packages
 RUN bash install_packages.sh
 WORKDIR /app
+
+#we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
+COPY ./app /app
 
 # set display port to avoid crash
 ENV DISPLAY=:99
