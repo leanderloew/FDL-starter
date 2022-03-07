@@ -1,6 +1,10 @@
 # Private python repos
 this is useful if you have private python libraries you want to import to your project. 
 
+# Cookiecutter 
+
+`cookiecutter git@github.com:leanderloew/FDL-starter.git --checkout private_python_libraries`
+
 ## What it does
 We provide 3 scripts:
 
