@@ -42,5 +42,21 @@ resource "aws_ecr_repository" "prod_base" {
     scan_on_push = false
   }
 }
+resource "aws_ecr_repository" "dev_batch" {
+  name                 = "dev_{{cookiecutter.project_name}}_batch"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+}
+resource "aws_ecr_repository" "prod_batch" {
+  name                 = "prod_{{cookiecutter.project_name}}_batch"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+}
 
 
