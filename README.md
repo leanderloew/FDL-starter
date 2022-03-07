@@ -1,19 +1,21 @@
 # Private python repos
 this is useful if you have private python libraries you want to import to your project. 
-## what it does 
-1. generate an ssh key in our local machine and add that to the github repo
-2. then we copy this ssh key in put it in the .ssh file (which is not part of the version controle)
-3. the docker containers will not: 
-   1. copy that ssh key to the container
-   2. use it to pull the private libraries mentioned in the private_libraries.text
-   3. after that delete the ssh key again, so it doesnt stick around in the docker containers. 
-4. the url has to have the form 
-```
-git+ssh://git@github.com/YOUR_REPO_URL_FOR_SSH#subdirectory=SUBDIRECTOY_WHERE_THE_SETUP,PY_IS
-```
-## Tips
-you might get a permission error in your id_rsa file you can run 
-```
-chmod 400 ~/.ssh/id_rsa
-```
-to fix it. 
+
+## What it does
+We provide 3 scripts:
+
+1. clone_packages.sh
+2. install_packages.sh 
+3. update_packages.sh
+
+# Clone
+clone_packages.sh will clone your private libraries to the repos folder, this folder gets ignores by git (since your private) libraries
+should be handled i their own repo. You will only have to run this at the beginning and whenever you add a new private package
+
+# Install 
+After you cloned the libraries, inside the docker file they get copied to the container and then installed inside the 
+container. So whenever the files change they will be automatically re-installed. You will never have to run install_packages.sh 
+explicitly.
+
+# Update
+Whenever you updated one of the libraries externally, you can run update_packages.sh (or cd and run git update inside the folder)

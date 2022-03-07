@@ -19,3 +19,4 @@ desktop.ini
 **/*.xlsx
 **/*.csv
 */notebooks
+/private_packages/repos/
