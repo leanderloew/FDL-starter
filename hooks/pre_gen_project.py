@@ -20,7 +20,3 @@ with open(env_path+"prod.env", "w") as file:
                "POSTGRES_PASSWORD = {{cookiecutter.postgres_password_prod}}\n"
                "POSTGRES_HOST = {{cookiecutter.postgres_host_prod}}}\n"
                "IS_PRODUCTION = True")
-ssh_path = "../{{cookiecutter.project_name}}/.ssh/"
-os.makedirs(ssh_path)
-with open(ssh_path+"ida_rsa", "w") as file:
-    pass
