@@ -6,9 +6,7 @@ RUN pip install psycopg2-binary
 
 #setting workdir this way so we coppy all relevant files to it
 WORKDIR ${LAMBDA_TASK_ROOT}
-RUN yum -y install openssh-clients
 RUN yum -y install git
-
 
 COPY ./requirements/base.txt .
 RUN pip --no-cache-dir install -r base.txt
