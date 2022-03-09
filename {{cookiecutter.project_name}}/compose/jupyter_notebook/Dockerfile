@@ -49,10 +49,9 @@ RUN  apt-get -yq update && \
 COPY ./private_packages /private_packages
 WORKDIR /private_packages
 RUN bash install_packages.sh
-WORKDIR /app
 
-#we copy it here (eventhough we havee it as a volume) such that we reinstall the private libraries below
-COPY ./app /app
+COPY ./compose/jupyter_notebook/jupyter_server_config.py /etc/jupyter/
+COPY ./compose/jupyter_notebook/overrides.json /opt/conda/share/jupyter/lab/settings/
 
 # set display port to avoid crash
 ENV DISPLAY=:99
