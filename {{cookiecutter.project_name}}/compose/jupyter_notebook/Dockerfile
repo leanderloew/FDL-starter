@@ -42,6 +42,9 @@ RUN pip --no-cache-dir install -r base.txt
 COPY ./requirements/local.txt .
 RUN pip --no-cache-dir install -r local.txt
 
+COPY ./compose/jupyter_notebook/jupyter_server_config.py /etc/jupyter/
+COPY ./compose/jupyter_notebook/overrides.json /opt/conda/share/jupyter/lab/settings/
+
 # set display port to avoid crash
 ENV DISPLAY=:99
 
